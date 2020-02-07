@@ -1,0 +1,28 @@
+{
+  "name": "@adh/sqlite3",
+  "version": "1.0.0",
+  "description": "My simple wrapper for sqlite3, covering basic functionality only.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austindh/sqlite3.git"
+  },
+  "author": "Austin Hughes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/austindh/sqlite3/issues"
+  },
+  "homepage": "https://github.com/austindh/sqlite3#readme",
+  "devDependencies": {
+    "@types/sqlite3": "^3.1.6",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "sqlite3": "^4.1.1"
+  }
+}
