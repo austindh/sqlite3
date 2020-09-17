@@ -31,6 +31,19 @@ main();
 
 ```
 
+## Running SQL from a file
+```typescript
+import { Sqlite } from '@adh/sqlite';
+const dbPath = 'path/to/test.db';
+const db = new Sqlite(dbPath);
+
+const main = async () => {
+	const sqlFile = 'path/to/queries.sql';
+	await db.executeFile(sqlFile);
+};
+main();
+```
+
 ## Notes
 - A connection to the database is opened when a method is called (method calls after the first one will use a cached database connection)
 - After the connection is opened, `PRAGMA foreign_keys = ON` is executed against the database to enable foreign key constraints

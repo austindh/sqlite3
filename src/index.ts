@@ -1,5 +1,9 @@
 import * as sqlite from 'sqlite3';
 sqlite.verbose();
+import * as fs from 'fs';
+import { promisify } from 'util';
+
+const readFile = promisify(fs.readFile);
 
 export class Sqlite {
 	private path: string;
@@ -69,5 +73,22 @@ export class Sqlite {
 				}
 			});
 		});
+	}
+
+	/** Run contents of a SQL file, one query at a time, wrapped in a transaction */
+	async executeFile(filePath: string): Promise<void> {
+		const db = await this.getConnection();
+		const sql = (await readFile(filePath)).toString();
+		const queries = sql.split(';');
+
+		db.serialize(() => {
+			db.run('BEGIN TRANSACTION;');
+			for (let q of queries) {
+				if (q) {
+					db.run(q + ';');
+				}
+			}
+			db.run('COMMIT;');
+		});	
 	}
 }
