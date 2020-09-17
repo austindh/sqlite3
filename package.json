@@ -1,6 +1,6 @@
 {
   "name": "@adh/sqlite3",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "My simple wrapper for sqlite3, covering basic functionality only.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
