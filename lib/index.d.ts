@@ -8,4 +8,6 @@ export declare class Sqlite {
     selectOne(sql: string, ...params: any[]): Promise<any>;
     /** Returns id of inserted row, if applicable */
     run(sql: string, ...params: any[]): Promise<number>;
+    /** Run contents of a SQL file, one query at a time, wrapped in a transaction */
+    executeFile(filePath: string): Promise<void>;
 }
