@@ -84,7 +84,7 @@ export class Sqlite {
 		db.serialize(() => {
 			db.run('BEGIN TRANSACTION;');
 			for (let q of queries) {
-				if (q) {
+				if (q.trim()) {
 					db.run(q + ';');
 				}
 			}
