@@ -32,7 +32,7 @@ export class Sqlite {
 
 	async close() {
 		const db = await this.getConnection();
-		return new Promise((resolve, reject) => {
+		return new Promise<void>((resolve, reject) => {
 			db.close(err => {
 				if (err) {
 					reject(err);
@@ -89,6 +89,6 @@ export class Sqlite {
 				}
 			}
 			db.run('COMMIT;');
-		});	
+		});
 	}
 }

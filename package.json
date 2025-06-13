@@ -19,10 +19,11 @@
   },
   "homepage": "https://github.com/austindh/sqlite3#readme",
   "devDependencies": {
-    "@types/sqlite3": "^3.1.6",
-    "typescript": "^3.7.5"
+    "@types/node": "^20.11.24",
+    "@types/sqlite3": "^3.1.8",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^5.1.7"
   }
 }

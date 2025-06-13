@@ -3,7 +3,7 @@ export declare class Sqlite {
     private connection;
     constructor(path: string);
     private getConnection;
-    close(): Promise<unknown>;
+    close(): Promise<void>;
     selectAll(sql: string, ...params: any[]): Promise<any[]>;
     selectOne(sql: string, ...params: any[]): Promise<any>;
     /** Returns id of inserted row, if applicable */
