@@ -2,6 +2,10 @@
 
 This is a basic (incomplete) wrapper around the `sqlite3` library. I found myself copying and pasting the same boilerplate code into a few different projects, so I created this package to consolidate that into one place.
 
+## Requirements
+- Node.js v20 or higher
+- TypeScript 5.x (if using TypeScript)
+
 ## Installation
 ```bash
 $ npm install @adh/sqlite3
@@ -33,7 +37,7 @@ main();
 
 ## Running SQL from a file
 ```typescript
-import { Sqlite } from '@adh/sqlite';
+import { Sqlite } from '@adh/sqlite3';
 const dbPath = 'path/to/test.db';
 const db = new Sqlite(dbPath);
 
@@ -47,3 +51,6 @@ main();
 ## Notes
 - A connection to the database is opened when a method is called (method calls after the first one will use a cached database connection)
 - After the connection is opened, `PRAGMA foreign_keys = ON` is executed against the database to enable foreign key constraints
+
+## Changelog
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes in each version.
